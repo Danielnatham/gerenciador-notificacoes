@@ -35,88 +35,88 @@ $(document).ready(function () {
             titulo: "Novo lançamento de imóvel",
             mensagem: "Existe um novo lançamento na planta no bairro Jardim das Flores.",
             dataEnvio: new Date(2021, 2, 20),
-            acoes: `<a  onclick="atualizar(1)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(1)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(1)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(1)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 2,
             titulo: "Oferta especial para apartamentos",
             mensagem: "Aproveite descontos exclusivos em apartamentos no centro da cidade.",
             dataEnvio: new Date(2021, 3, 15),
-            acoes: `<a  onclick="atualizar(2)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(2)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(2)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(2)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 3,
             titulo: "Lançamento de casa em condomínio fechado",
             mensagem: "Conheça nossas novas casas no condomínio Verde Vale.",
             dataEnvio: new Date(2021, 4, 22),
-            acoes: `<a  onclick="atualizar(3)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(3)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(3)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(3)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 4,
             titulo: "Promoção de imóveis comerciais",
             mensagem: "Descontos imperdíveis para imóveis comerciais no centro.",
             dataEnvio: new Date(2021, 5, 10),
-            acoes: `<a  onclick="atualizar(4)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(4)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(4)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(4)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 5,
             titulo: "Novo projeto de apartamentos",
             mensagem: "Descubra o novo projeto de apartamentos no bairro Novo Horizonte.",
             dataEnvio: new Date(2021, 6, 18),
-            acoes: `<a  onclick="atualizar(5)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(5)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(5)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(5)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 6,
             titulo: "Venda de lotes em área nobre",
             mensagem: "Aproveite a venda de lotes no bairro Vila Rica.",
             dataEnvio: new Date(2021, 7, 25),
-            acoes: `<a  onclick="atualizar(6)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(6)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(6)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(6)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 7,
             titulo: "Imóveis com financiamento facilitado",
             mensagem: "Aproveite nosso financiamento facilitado para imóveis.",
             dataEnvio: new Date(2021, 8, 30),
-            acoes: `<a  onclick="atualizar(7)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(7)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(7)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(7)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 8,
             titulo: "Visitas agendadas para novos imóveis",
             mensagem: "Agende sua visita para conhecer nossos novos imóveis.",
             dataEnvio: new Date(2021, 9, 14),
-            acoes: `<a  onclick="atualizar(8)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(8)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(8)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(8)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 9,
             titulo: "Imóvel de luxo à venda",
             mensagem: "Conheça nosso imóvel de luxo disponível para venda.",
             dataEnvio: new Date(2021, 10, 5),
-            acoes: `<a  onclick="atualizar(9)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(9)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(9)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(9)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 10,
             titulo: "Lançamento de imóveis na praia",
             mensagem: "Novos imóveis disponíveis na praia para temporada.",
             dataEnvio: new Date(2021, 11, 20),
-            acoes: `<a onclick="atualizar(10)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(10)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a onclick="atualizar(10)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(10)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
             id: 11,
             titulo: "Oportunidade de investimento",
             mensagem: "Invista em imóveis com grande potencial de valorização.",
             dataEnvio: new Date(2022, 0, 15),
-            acoes: `<a onclick="atualizar(11)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(11)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a onclick="atualizar(11)" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(11)" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
     ];
 
@@ -270,8 +270,8 @@ $(document).ready(function () {
             titulo: notificacao.titulo,
             mensagem: notificacao.mensagem,
             dataEnvio: new Date(notificacao.dataEnvio + "T00:00:00"),
-            acoes: `<a  onclick="atualizar(${id})" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(${id})" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+            acoes: `<a  onclick="atualizar(${id})" class="btn m-1 btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(${id})" class="btn m-1 btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         };
     }
 });
