@@ -1,7 +1,16 @@
 $(document).ready(function () {
     const colunas = [
         { data: 'titulo' },
-        { data: 'mensagem' },
+        {
+            data: 'mensagem',
+            render: function (data, type, row) {
+                if (type === 'display' || type === 'filter') {
+                    return data.length > 100 ? data.substring(0, 100) + '...' : data;
+                }
+
+                return row.mensagem
+            }
+        },
         {
             data: 'dataEnvio',
             render: function (data, type, row) {
@@ -26,7 +35,7 @@ $(document).ready(function () {
             titulo: "Novo lançamento de imóvel",
             mensagem: "Existe um novo lançamento na planta no bairro Jardim das Flores.",
             dataEnvio: new Date(2021, 2, 20),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=1" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(1)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(1)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -34,7 +43,7 @@ $(document).ready(function () {
             titulo: "Oferta especial para apartamentos",
             mensagem: "Aproveite descontos exclusivos em apartamentos no centro da cidade.",
             dataEnvio: new Date(2021, 3, 15),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=2" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(2)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(2)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -42,7 +51,7 @@ $(document).ready(function () {
             titulo: "Lançamento de casa em condomínio fechado",
             mensagem: "Conheça nossas novas casas no condomínio Verde Vale.",
             dataEnvio: new Date(2021, 4, 22),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=3" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(3)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(3)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -50,7 +59,7 @@ $(document).ready(function () {
             titulo: "Promoção de imóveis comerciais",
             mensagem: "Descontos imperdíveis para imóveis comerciais no centro.",
             dataEnvio: new Date(2021, 5, 10),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=4" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(4)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(4)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -58,7 +67,7 @@ $(document).ready(function () {
             titulo: "Novo projeto de apartamentos",
             mensagem: "Descubra o novo projeto de apartamentos no bairro Novo Horizonte.",
             dataEnvio: new Date(2021, 6, 18),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=5" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(5)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(5)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -66,7 +75,7 @@ $(document).ready(function () {
             titulo: "Venda de lotes em área nobre",
             mensagem: "Aproveite a venda de lotes no bairro Vila Rica.",
             dataEnvio: new Date(2021, 7, 25),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=6" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(6)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(6)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -74,7 +83,7 @@ $(document).ready(function () {
             titulo: "Imóveis com financiamento facilitado",
             mensagem: "Aproveite nosso financiamento facilitado para imóveis.",
             dataEnvio: new Date(2021, 8, 30),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=7" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(7)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(7)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -82,7 +91,7 @@ $(document).ready(function () {
             titulo: "Visitas agendadas para novos imóveis",
             mensagem: "Agende sua visita para conhecer nossos novos imóveis.",
             dataEnvio: new Date(2021, 9, 14),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=8" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(8)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(8)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -90,7 +99,7 @@ $(document).ready(function () {
             titulo: "Imóvel de luxo à venda",
             mensagem: "Conheça nosso imóvel de luxo disponível para venda.",
             dataEnvio: new Date(2021, 10, 5),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=9" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a  onclick="atualizar(9)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(9)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -98,7 +107,7 @@ $(document).ready(function () {
             titulo: "Lançamento de imóveis na praia",
             mensagem: "Novos imóveis disponíveis na praia para temporada.",
             dataEnvio: new Date(2021, 11, 20),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=10" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a onclick="atualizar(10)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(10)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
         {
@@ -106,7 +115,7 @@ $(document).ready(function () {
             titulo: "Oportunidade de investimento",
             mensagem: "Invista em imóveis com grande potencial de valorização.",
             dataEnvio: new Date(2022, 0, 15),
-            acoes: `<a href="cadastrar-editar-notificacoes.html?id=11" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+            acoes: `<a onclick="atualizar(11)" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a onclick="remover(11)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
         },
     ];
@@ -115,6 +124,7 @@ $(document).ready(function () {
     const table = $('#tabela').DataTable({
         data: notificacoes,
         columns: colunas,
+        order: [[2, 'asc']],
         language: {
             url: '//cdn.datatables.net/plug-ins/2.1.8/i18n/pt-BR.json',
         },
@@ -124,6 +134,14 @@ $(document).ready(function () {
                 searchable: false,
                 orderable: false,
                 className: "text-center pb-2",
+            },
+            {
+                targets: 2,
+                className: "text-center pb-2",
+            },
+            {
+                targets: '_all',
+                className: "p-2",
             }
         ]
     });
@@ -132,12 +150,9 @@ $(document).ready(function () {
     const adicionar = (notificacao) => {
         const id = Math.floor(Math.random() * 1000);
 
-        notificacao['id'] = id
-        notificacao['dataEnvio'] = new Date(notificacao['dataEnvio'] + "T00:00:00");
-        notificacao['acoes'] = `<a href="cadastrar-editar-notificacoes.html?id=${id}" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a onclick="remover(${id})" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`;
+        const salvar = formatarNotificacao(notificacao, id);
 
-        table.row.add(notificacao).draw();
+        table.row.add(salvar).draw();
         $.toast({
             heading: 'Sucesso',
             text: `Notificação com ID ${id} adicionado!.`,
@@ -155,7 +170,7 @@ $(document).ready(function () {
 
     window.remover = (id) => {
         const rowIndex = table.rows().indexes().filter((index) => {
-            return table.row(index).data().id === id;
+            return table.row(index).data().id == id;
         });
 
         if (rowIndex.length > 0) {
@@ -176,16 +191,44 @@ $(document).ready(function () {
         }
     };
 
-    const atualizar = (id, updatedData) => {
+    window.atualizar = (id) => {
         const rowIndex = table.rows().indexes().filter((index) => {
             return table.row(index).data().id === id;
         });
 
         if (rowIndex.length > 0) {
+            const data = table.row(rowIndex[0]).data();
+
+            $('#id').val(data.id);
+            $('#titulo').val(data.titulo);
+            $('#mensagem').val(data.mensagem);
+
+            $('#dataEnvio').val(formatarData(data.dataEnvio));
+
+            $('#adicionarNotificacaoModalForm').modal('show');
+        }
+    };
+
+    const formatarData = (date) => {
+        const d = new Date(date);
+        const ano = d.getFullYear();
+        const mes = String(d.getMonth() + 1).padStart(2, '0');
+        const dia = String(d.getDate()).padStart(2, '0');
+
+        return `${ano}-${mes}-${dia}`;
+    };
+
+    const atualizarLinha = (id, notificacao) => {
+        const rowIndex = table.rows().indexes().filter((index) => {
+            return table.row(index).data().id === parseInt(id);
+        });
+
+        if (rowIndex.length > 0) {
             table.row(rowIndex[0]).data({
                 ...table.row(rowIndex[0]).data(),
-                ...updatedData
+                ...formatarNotificacao(notificacao, id)
             }).draw();
+
             $.toast({
                 heading: 'Sucesso',
                 text: `Notificação com ID ${id} atualizada!.`,
@@ -199,7 +242,6 @@ $(document).ready(function () {
                 loader: true,
                 loaderBg: '#9EC600',
             });
-            console.log(`Row with ID ${id} updated and DataTable refreshed.`);
         }
     };
 
@@ -212,10 +254,24 @@ $(document).ready(function () {
             formData[this.name] = this.value;
         });
 
-        console.log(formData)
-
-        adicionar(formData)
-
+        if (formData.id) {
+            atualizarLinha(formData.id, formData);
+        } else {
+            adicionar(formData)
+        }
+        
+        $('#formularioAdicionarNotificacao').find('input[type="text"], input[type="date"], textarea').val('');
         $('#fecharModal').click();
     });
+
+    const formatarNotificacao = (notificacao, id) => {
+        return {
+            id: parseInt(id),
+            titulo: notificacao.titulo,
+            mensagem: notificacao.mensagem,
+            dataEnvio: new Date(notificacao.dataEnvio + "T00:00:00"),
+            acoes: `<a  onclick="atualizar(${id})" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a onclick="remover(${id})" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>`,
+        };
+    }
 });
