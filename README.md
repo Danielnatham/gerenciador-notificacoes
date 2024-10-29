@@ -1,4 +1,4 @@
-# Meu Projeto
+# Gerenciador de Notificações
 
 Este é o gerenciador de notificações personalizado.
 
