@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SupremoCRM - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://sistemasupremo.com.br/favicon.ico">
+    <link href="
+    https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.css
+    " rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex justify-content-center align-items-center vh-100">
+
+    <!-- Card de login do usuário -->
+    <div id="corpo" class="card p-4 shadow">
+        <div class="m-auto d-flex mb-3 justify-content-center">
+            <img src="https://sistemasupremo.com.br/2020/logo-supremo-login.jpg" alt="Supremo CRM" id="logo">
+        </div>
+        <form id="formularioLogin">
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuário</label>
+                <input type="text" class="form-control" id="usuario" required>
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#recuperarSenhaModel">Esqueci minha senha</a>
+        </div>
+    </div>
+
+    <!-- Modal para recuperar Senha -->
+    <div class="modal fade" id="recuperarSenhaModel" tabindex="-1" aria-labelledby="recuperarSenhaModelLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recuperarSenhaModelLabel">Recuperar Senha</h5>
+                    <button type="button" class="btn-close" id="fecharModal" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioRecuperarSenha">
+                        <div class="mb-3">
+                            <label for="recoveryEmail" class="form-label">Insira seu email!</label>
+                            <input type="email" class="form-control" id="recoveryEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar link de recuperação</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.js"></script>
+        <script src="index.js"></script>
+</body>
+
+</html>
