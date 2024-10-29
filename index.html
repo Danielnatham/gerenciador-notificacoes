@@ -16,10 +16,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
-<body class="d-flex justify-content-center align-items-center vh-100">
+<body id="login" class="d-flex justify-content-center align-items-center vh-100">
 
     <!-- Card de login do usuário -->
     <div id="corpo" class="card p-4 shadow">
@@ -39,6 +39,9 @@
         </form>
         <div class="text-center mt-3">
             <a href="#" data-bs-toggle="modal" data-bs-target="#recuperarSenhaModel">Esqueci minha senha</a>
+        </div>
+        <div class="text-center mt-3">
+            <mark>Login: admin <br/> Senha: admin</mark>
         </div>
     </div>
 
@@ -66,7 +69,56 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.js"></script>
-        <script src="index.js"></script>
+        <script>
+            $(document).ready(function () {
+                    $('#formularioLogin').on('submit', function (event) {
+                        event.preventDefault();
+
+                        const usuario = $('#usuario').val().trim();
+                        const senha = $('#senha').val().trim();
+
+                        if (usuario === "admin" && senha === "admin") {
+                            location.href = 'notificacoes.html';
+                        } else {
+                            $.toast({
+                                heading: 'Usuário ou senha inválidos!',
+                                icon: 'error',
+                                showHideTransition: 'fade',
+                                allowToastClose: true,
+                                hideAfter: 3000,
+                                stack: 5,
+                                position: 'top-right',
+                                textAlign: 'left',
+                                loader: true,
+                                loaderBg: '#9EC600',
+                            });
+                        }
+                    });
+
+                    $('#formularioRecuperarSenha').on('submit', function (event) {
+                        event.preventDefault();
+
+                        const recoveryEmail = $('#recoveryEmail').val();
+
+                        $.toast({
+                            heading: 'Sucesso',
+                            text: 'Email de recuperação enviado para ' + recoveryEmail,
+                            icon: 'success',
+                            showHideTransition: 'fade',
+                            allowToastClose: true,
+                            hideAfter: 3000,
+                            stack: 5,
+                            position: 'top-right',
+                            textAlign: 'left',
+                            loader: true,
+                            loaderBg: '#9EC600',
+                        });
+
+                        $('#recoveryEmail').val('');
+                        $('#fecharModal').click();
+                    });
+                });
+        </script>
 </body>
 
 </html>

@@ -1,0 +1,28 @@
+#login {
+    background-color: #f1f5f9;
+    font-family: poppins;
+}
+
+#logo {
+    max-width: 50%;
+}
+
+#corpo {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+#tabela {
+    width: 100%;
+    max-width: 60vw;
+    margin: auto;
+}
+
+#header {
+    padding: 22px 0;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
